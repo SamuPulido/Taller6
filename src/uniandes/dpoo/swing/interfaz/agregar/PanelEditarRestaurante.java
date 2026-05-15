@@ -28,17 +28,47 @@ public class PanelEditarRestaurante extends JPanel
 
     public PanelEditarRestaurante( )
     {
+    	setLayout( new GridLayout( 3, 1 ) );
+    	
         // Crea el campo para el nombre con una etiqueta al frente
-        // TODO completar
+    	JPanel panelNombre = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
+        JLabel labNombre = new JLabel( "Nombre" ); //Es la cajita donde el usuario va a escribir
+        txtNombre = new JTextField( 15 );
+
+        panelNombre.add( labNombre );
+        panelNombre.add( txtNombre );
 
         // Crea el selector para la calificación con una etiqueta al frente
-        // TODO completar
+        JPanel panelCalificacion = new JPanel( new FlowLayout( FlowLayout.LEFT ) ); //FowLayout.LEFT hace que los elementos se alineen hacia la izquierda
+        JLabel labCalificacion = new JLabel( "Calificación" );
+
+        cbbCalificacion = new JComboBox<String>( ); //JComboBox creo una una lista desplegable
+        cbbCalificacion.addItem( "1" );
+        cbbCalificacion.addItem( "2" );
+        cbbCalificacion.addItem( "3" );
+        cbbCalificacion.addItem( "4" );
+        cbbCalificacion.addItem( "5" );
+
+        panelCalificacion.add( labCalificacion );
+        panelCalificacion.add( cbbCalificacion );
 
         // Crea el selector para indicar si ya ha sido visitado, con una etiqueta al frente
-        // TODO completar
+        JPanel panelVisitado = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
+
+        JLabel labVisitado = new JLabel( "Visitado" );
+
+        cbbVisitado = new JComboBox<String>( );
+
+        cbbVisitado.addItem( "Sí" );
+        cbbVisitado.addItem( "No" );
+
+        panelVisitado.add( labVisitado );
+        panelVisitado.add( cbbVisitado );
 
         // Agregar todos los elementos al panel
-        // TODO completar
+        add( panelNombre );
+        add( panelCalificacion );
+        add( panelVisitado );
 
     }
 
@@ -48,8 +78,8 @@ public class PanelEditarRestaurante extends JPanel
      */
     public boolean getVisitado( )
     {
-        // TODO completar
-        return false;
+    	 String visitado = ( String )cbbVisitado.getSelectedItem( );
+    	    return visitado.equals( "Sí" );
     }
 
     /**
