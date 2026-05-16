@@ -98,7 +98,6 @@ public class PanelEditarRestaurante extends JPanel
      */
     public String getNombre( )
     {
-        // TODO completar
-        return "";
+        return txtNombre.getText( );
     }
 }
