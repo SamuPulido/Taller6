@@ -1,6 +1,6 @@
 package uniandes.dpoo.swing.interfaz.principal;
 
-import java.awt.FlowLayout;
+//import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.ImageIcon;
